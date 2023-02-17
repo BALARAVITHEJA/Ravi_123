@@ -1,0 +1,37 @@
+// launching Multiple Browsers One By One
+public class Selenium_Exp4 {
+WebDriver driver;
+
+public void LaunchAUT_1() throws InterruptedException
+{
+System.setProperty("webdriver.chrome.driver","D:\\Selenium_Need_Files\\chromedriver_win32\\chromedriver.exe");
+ driver = new ChromeDriver();
+ driver.manage().window().maximize();
+ driver.get("https://www.redbus.in/");
+ Thread.sleep(2000);
+}
+public void LaunchAUT_2() throws InterruptedException
+{
+	System.setProperty("webdriver.edge.driver","D:\\Selenium_Need_Files\\edgedriver_win64\\msedgedriver.exe");
+	driver =new EdgeDriver();
+	driver.manage().window().maximize();
+	driver.get("https://www.amazon.in/");
+	Thread.sleep(2000);
+}
+public void LAunchAUT_3() throws InterruptedException
+{
+	System.setProperty("webdriver.gecko.driver","D:\\Selenium_Need_Files\\geckodriver-v0.31.0-win64 (1)\\geckodriver.exe");
+	driver =new FirefoxDriver();
+	driver.manage().window().maximize();
+	driver.get("https://www.flipkart.com/");
+	Thread.sleep(2000);
+}
+	public static void main(String[] args) throws InterruptedException {
+		Selenium_Exp4 obj=new Selenium_Exp4();
+		obj.LaunchAUT_1();
+		obj.LaunchAUT_2();
+		obj.LAunchAUT_3();
+
+	}
+
+}
