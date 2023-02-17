@@ -1,0 +1,50 @@
+public class Selenium_Exp5 {
+WebDriver driver;
+
+	public void LaunchAUT() throws InterruptedException
+	{
+		System.setProperty("webdriver.chrome.driver","D:\\Selenium_Need_Files\\chromedriver_win32\\chromedriver.exe");
+		driver =new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://www.amazon.in/");
+		Thread.sleep(2000);
+	}
+	public void Get_Title()
+	{
+		String Title=driver.getTitle();
+		System.out.println(Title);
+	}
+	public void Get_URL()
+	{
+		String Url=driver.getCurrentUrl();
+		System.out.println(Url);		
+	}
+	public void Get_Page_Src()
+	{
+		String Src=driver.getPageSource();
+		System.out.println(Src);
+	}
+	public void Send_Data() throws InterruptedException
+	{
+		driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']")).sendKeys("dell latitude e5470 laptop i5 6th generation");
+		Thread.sleep(2000);
+	}
+	public void Click_Search_Button() throws InterruptedException
+	{
+		driver.findElement(By.xpath("//input[@id='nav-search-submit-button']")).click();
+		Thread.sleep(2000);
+		
+	}
+	public static void main(String[] args) throws InterruptedException {
+		Selenium_Exp5 obj=new Selenium_Exp5();
+		obj.LaunchAUT();
+		obj.Get_Page_Src();
+		obj.Get_URL();
+		obj.Get_Title();
+		obj.Send_Data();
+		obj.Click_Search_Button();
+
+	}
+	
+
+}
