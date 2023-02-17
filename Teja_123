@@ -1,0 +1,19 @@
+// Launching Chrome Browser
+public class Selenium_Exp1 {
+	WebDriver driver;
+	public void LaunchAUT() throws InterruptedException
+	{
+  System.setProperty("webdriver.chrome.driver","D:\\Selenium_Need_Files\\chromedriver_win32\\chromedriver.exe");
+  driver =new ChromeDriver();
+  driver.manage().window().maximize();
+  driver.get("https://www.youtube.com/");
+  Thread.sleep(2000);
+	}
+
+	public static void main(String[] args) throws InterruptedException {
+		Selenium_Exp1 obj=new Selenium_Exp1();
+		obj.LaunchAUT();
+
+	}
+
+}
